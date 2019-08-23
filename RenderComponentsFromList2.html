@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Render Components From List 2</title>
+    <script src="https://unpkg.com/react@16.7.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const lakeList = [
+            {id: 1, name: "Lake 01", trailhead: "Trail 01"},
+            {id: 2, name: "Lake 02", trailhead: "Trail 02"},
+            {id: 3, name: "Lake 03", trailhead: "Trail 03"},
+            {id: 4, name: "Lake 04", trailhead: "Trail 04"}
+        ];
+
+        const App = ({lakes}) => (
+            <ul>
+                {lakes.map(lake =>
+                    <li key={lake.id}>{lake.name} | TrailHead: {lake.trailhead} </li>
+                )}
+            </ul>
+        )
+
+        ReactDOM.render(
+          <App lakes={lakeList}/>,
+          document.getElementById("root")
+        );
+
+    </script>
+
+</body>
+</html>

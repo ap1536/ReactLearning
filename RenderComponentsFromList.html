@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Render Components From List</title>
+    <script src="https://unpkg.com/react@16.7.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const lakesList = [
+            "Lake Number 01",
+            "Lake Number 02",
+            "Lake Number 03"
+        ];
+
+        const App = ({lakes}) => (
+            <ul>
+                {lakes.map((lake, i) =>
+                    <li key={i}>{lake}</li>
+                )}
+            </ul>
+        )
+
+        ReactDOM.render(
+            <App lakes = {lakesList} />,
+            document.getElementById("root")
+        );
+
+    </script>
+
+</body>
+</html>
